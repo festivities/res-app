@@ -1,0 +1,47 @@
+<!-- <div class="container-fluid header-container" role="navigation"> -->
+<!-- 	<div class="row header-row"> -->
+<!-- 		<div class="col-lg-4 col-md-4 col-xs-9 header-title">Jordan Foster</div> -->
+<!-- 		<div class="col-lg-8 col-md-8 nav-menu-container"> -->
+<!-- 			<ul class="nav-menu"> -->
+<!-- 				<li *ngFor="let link of navLinks" class="col-lg-2 col-md-2"> -->
+<!-- 					<a href="#">{{link.value}}</a> -->
+<!-- 				</li> -->
+<!-- 			</ul> -->
+<!-- 		</div> -->
+<!-- 		<div class="col-xs-3 mobile-menu-container"> -->
+<!-- 			<button type="button" class="mobile-menu-button" (click)="openNavMenu()"> -->
+<!-- 				<span class="icon-bar"> </span> -->
+<!-- 				<span class="icon-bar"> </span> -->
+<!-- 				<span class="icon-bar"> </span> -->
+<!-- 			</button> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </div> -->
+
+
+<div class="header-container">
+	<div class="header-logo">JORDAN FOSTER</div>
+	<div class="nav-container">
+		<nav class="nav-menu-desktop">
+			<ul class="ul-test">
+				<li *ngFor="let link of navLinks" class="menu-item-test">
+					<a href="#">{{link.value}}</a>
+				</li>
+			</ul>
+			<div class="mobile-menu-container">
+				<button type="button" class="mobile-menu-button" (click)="openNavMenu()">
+					<span class="icon-bar"> </span>
+					<span class="icon-bar"> </span>
+					<span class="icon-bar"> </span>
+				</button>
+			</div>
+		</nav>
+	</div>
+</div>
+<div class="row menu-toggle" *ngIf="isNavMenuOpen">
+	<div class="dropdown-nav-menu">
+		<div *ngFor="let link of navLinks" class="dropdown-nav-item" (click)="setPage(link.key)">
+			<a href="#">{{link.value}}</a>
+		</div>
+	</div>
+</div>
