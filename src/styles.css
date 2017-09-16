@@ -2,6 +2,13 @@
 body {
 	margin: 0px;
 	background-color: #253237;
-	padding-left: 10%;
-	padding-right: 10%;
+	padding: 10px 5% 10px 5%;
+	font-family: "edmondsansbold", sans-serif;
+}
+
+@media screen and (max-width: 380px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}	
 }

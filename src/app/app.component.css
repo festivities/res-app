@@ -7,9 +7,12 @@ app-header {
 	height: 100vh;
 	position: relative;
 	z-index: 1;
-/* 	max-width: 1500px; */
-    width: 100%;
-/*     margin-left: auto; */
-/*     margin-right: auto; */
     background-color: #85bcc8;
+    padding: 1%;
+}
+
+.view {
+	background-color: grey;
+	height: 100%;
+	width: 100%;
 }

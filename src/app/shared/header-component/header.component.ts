@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
 import { NavigationService } from '../navigation-service/navigation-service.component';
@@ -18,23 +19,29 @@ import { NavigationService } from '../navigation-service/navigation-service.comp
 
 export class HeaderComponent {
   
+  // functions
   onResize = this.privateOnResize;
   setMenuClicked = this.publicSetMenuClicked;
-  
   toggleDropDownMenu = this.publicToggleDropDownMenu;
   onClick = this.publicOnClick;
   navigateToPage = this.publicNavigateToPage;
   
-  
+  // variables
   isNavMenuOpen = false;
   isNavMenuClicked = false;
+  title = {};
   navLinks = [];
   menuActiveClass = "";
   
-  constructor(private navigationService: NavigationService){}
+  constructor(
+    private navigationService: NavigationService,
+    private router: Router
+  ){};
   
   ngOnInit(): void {
-    this.navLinks = this.navigationService.getNavLinks();
+    let headerProperties = this.navigationService.getNavLinks();
+    this.title = headerProperties.title;
+    this.navLinks = headerProperties.navLinks;
   }
   
   // Closes nav menu when window is resized
@@ -73,16 +80,12 @@ export class HeaderComponent {
   }
   
   // Used to navigate pages
-  publicNavigateToPage (key): void {
+  // Used to navigate pages
+  publicNavigateToPage (link): void {
     this.isNavMenuClicked = true;
-    if (key === "aboutNavLink") {
-      
-    } else if (key === "servicesNavLink") {
-      
-    } else if (key === "historyNavLink") {
-      
-    } else if (key === "contactNavLink") {
-      
+    if (link) {
+      let location = '/' + link.key;
+      this.router.navigateByUrl(location);
     }
   }
 }

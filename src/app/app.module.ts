@@ -1,19 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header-component/header.component';
+
+import { SharedComponentModule } from './shared/shared-component.module';
+import { ViewModule } from './views/view.module';
+import { AppRoutingModule } from './app-routing.module';
+
 import { NavigationService } from './shared/navigation-service/navigation-service.component';
-import { HighlightDirective } from './shared/on-field-click/onfieldclick.directive';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HighlightDirective
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SharedComponentModule,
+    ViewModule,
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]

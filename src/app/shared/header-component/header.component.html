@@ -1,9 +1,9 @@
 <div class="header-container">
-	<div class="header-logo">JORDAN FOSTER</div>
+	<div class="header-logo" (click)="navigateToPage(title.key)"><a href="#">{{title.value}}</a></div>
 	<div class="nav-container">
 		<nav class="nav-menu">
 			<ul class="nav-links">
-				<li *ngFor="let link of navLinks" class="menu-item">
+				<li *ngFor="let link of navLinks" class="menu-item" (click)="navigateToPage(link)">
 					<a href="#">{{link.value}}</a>
 				</li>
 			</ul>
@@ -19,7 +19,7 @@
 </div>
 <div class="menu-toggle" *ngIf="isNavMenuOpen" [ngClass]="menuActiveClass" (click)="setMenuClicked()">
 	<div class="mobile-nav-menu">
-		<div *ngFor="let link of navLinks" class="mobile-menu-item" (click)="navigateToPage(link.key)">
+		<div *ngFor="let link of navLinks" class="mobile-menu-item" (click)="navigateToPage(link)">
 			<a href="#">{{link.value}}</a>
 		</div>
 	</div>
