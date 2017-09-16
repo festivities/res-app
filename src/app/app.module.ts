@@ -4,23 +4,35 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { SharedComponentModule } from './shared/shared-component.module';
-import { ViewModule } from './views/view.module';
+import { FooterComponent } from './shared/footer-component/footer.component';
+import { HeaderComponent } from './shared/header-component/header.component';
+import { NavigationService } from './shared/navigation-service/navigation-service.component';
+
+import { AboutComponent } from './views/about-component/about.component';
+import { HomeComponent } from './views/home-component/home.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
-import { NavigationService } from './shared/navigation-service/navigation-service.component';
+const appRoutes: Routes = [
+  { path: 'index', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+//  { path: '',   redirectTo: '/index', pathMatch: 'full' },
+//  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   imports: [
     BrowserModule,
-    SharedComponentModule,
-    ViewModule,
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    AboutComponent,
+    HomeComponent
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

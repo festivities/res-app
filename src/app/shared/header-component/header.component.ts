@@ -81,11 +81,12 @@ export class HeaderComponent {
   
   // Used to navigate pages
   // Used to navigate pages
-  publicNavigateToPage (link): void {
+  publicNavigateToPage (link): Boolean {
     this.isNavMenuClicked = true;
     if (link) {
       let location = '/' + link.key;
-      this.router.navigateByUrl(location);
+      this.router.navigate([location]);
+      return false; // returning false so browser doesn't reload
     }
   }
 }
