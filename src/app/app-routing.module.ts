@@ -6,8 +6,8 @@ import { AboutComponent } from './views/about-component/about.component';
 
 const appRoutes: Routes = [
   { path: 'index', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
-//  { path: '',   redirectTo: '/index', pathMatch: 'full' },
+  { path: 'about', component: AboutComponent },
+  { path: '',   redirectTo: '/index', pathMatch: 'full' }
 //  { path: '**', component: PageNotFoundComponent }
 ];
 

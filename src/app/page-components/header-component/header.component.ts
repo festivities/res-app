@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
-import { NavigationService } from '../navigation-service/navigation-service.component';
+import { NAVIGATION_PROPERTIES } from './header-navigation';
 
 @Component({
   selector: 'app-header',
@@ -34,14 +34,12 @@ export class HeaderComponent {
   menuActiveClass = "";
   
   constructor(
-    private navigationService: NavigationService,
     private router: Router
   ){};
   
   ngOnInit(): void {
-    let headerProperties = this.navigationService.getNavLinks();
-    this.title = headerProperties.title;
-    this.navLinks = headerProperties.navLinks;
+    this.title = NAVIGATION_PROPERTIES.headerTitle;
+    this.navLinks = NAVIGATION_PROPERTIES.navigationLinks;
   }
   
   // Closes nav menu when window is resized

@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
 
-@Injectable()
-export class NavigationService {
-  headerProperties = {
-    navLinks : [
+export const NAVIGATION_PROPERTIES = {
+  headerTitle : {
+      index: 0,
+      key: "index",
+      value: "JORDAN FOSTER"
+  },
+  navigationLinks : [
       {
         index : 0,
         key : "about",
@@ -21,16 +23,5 @@ export class NavigationService {
         key : "contact",
         value : "CONTACT"
       }
-    ],
-    title : {
-      key: "index",
-      value: "JORDAN FOSTER"
-    }
-  }
-  
-  getNavLinks () {
-    return this.headerProperties;
-  }
-  
-  
+    ]
 }
