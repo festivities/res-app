@@ -9,19 +9,23 @@ export const NAVIGATION_PROPERTIES = {
       {
         index : 0,
         key : "about",
-        value : "ABOUT"
+        value : "ABOUT",
+        activeClass : ""
       }, {
         index : 1,
         key : "services",
-        value : "SERVICES"
+        value : "SERVICES",
+        activeClass : ""
       }, {
         index : 2,
         key : "history",
-        value : "HISTORY"
+        value : "HISTORY",
+        activeClass : ""
       }, {
         index : 3,
         key : "contact",
-        value : "CONTACT"
+        value : "CONTACT",
+        activeClass : ""
       }
     ]
 }

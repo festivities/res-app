@@ -8,7 +8,7 @@ app-header {
 	position: relative;
 	z-index: 1;
     background-color: #85bcc8;
-    padding: 1%;
+    padding: 5px;
 }
 
 .view {

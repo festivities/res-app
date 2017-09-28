@@ -84,7 +84,17 @@ export class HeaderComponent {
     if (link) {
       let location = '/' + link.key;
       this.router.navigate([location]);
-      return false; // returning false so browser doesn't reload
+      
+      for (let nav of this.navLinks) {
+        nav.activeClass = "";
+      }
+      link.activeClass = "link-active"; // Set link to active
     }
+    
+    if (this.isNavMenuOpen) {
+      this.toggleDropDownMenu();
+    }
+    
+    return false; // returning false so browser doesn't reload
   }
 }

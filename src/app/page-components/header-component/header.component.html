@@ -1,9 +1,9 @@
-<div class="header-container">
-	<div class="header-logo" (click)="navigateToPage(title)"><a href="#">{{title.value}}</a></div>
-	<div class="nav-container">
+<div class="header-container row">
+	<div class="header-logo col-lg-3 col-md-3 col-sm-3 col-xs-3" (click)="navigateToPage(title)"><div class="logo"><a href="#">{{title.value}}</a></div></div>
+	<div class="nav-container col-lg-9 col-md-9 col-sm-9 col-xs-9">
 		<nav class="nav-menu">
 			<ul class="nav-links">
-				<li *ngFor="let link of navLinks" class="menu-item" (click)="navigateToPage(link)">
+				<li *ngFor="let link of navLinks" class="menu-item" ngClass="{{link.activeClass}}" (click)="navigateToPage(link)">
 					<a href="#">{{link.value}}</a>
 				</li>
 			</ul>
